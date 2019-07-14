@@ -28,8 +28,6 @@ class Eloom_MercadoPago_Model_Cron extends Mage_Core_Model_Abstract {
     ));
     $collection->addAttributeToFilter('o.created_at', array('lt' => date('Y-m-d H:i:s', strtotime('-30 minutes'))));
 
-    $this->logger->info('SQL: ' . $collection->getSelect());
-
     if ($collection->getSize()) {
       $config = Mage::helper('eloom_mercadopago/config');
 
@@ -62,8 +60,6 @@ class Eloom_MercadoPago_Model_Cron extends Mage_Core_Model_Abstract {
       $collection->addFieldToFilter('status', array('eq' => Mage_Sales_Model_Order::STATE_PENDING_PAYMENT));
       $collection->addFieldToFilter('method', Eloom_MercadoPago_Model_Method_Boleto::PAYMENT_METHOD_BOLETO_CODE);
       $collection->addAttributeToFilter('p.boleto_cancellation', array('lt' => date('Y-m-d H:i:s', strtotime('now'))));
-
-      $this->logger->info('SQL: ' . $collection->getSelect());
 
       if ($collection->getSize()) {
         foreach ($collection as $order) {
