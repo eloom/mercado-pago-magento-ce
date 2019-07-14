@@ -1,0 +1,24 @@
+<?php $code = $this->getMethodCode(); ?>
+<ul id="payment_form_<?php echo $code ?>" class="form-list" style="display: none;">
+  <?php if ($this->isAllowCampaigns()): ?>
+    <li class="discount-code">
+      <input type="text" name="payment[boleto_campaigns_code]" id="<?php echo $code ?>-campaigns-code" class="input-text" placeholder="<?php echo $this->__('Discount Code MP') ?>" autocomplete="off" value="<?php echo $this->getInfoData('boleto_campaigns_code'); ?>"/>
+      <button type="button" class="button" onclick="Eloom.MercadoPago.CampaignsCode.apply(this);"><span><span><?php echo $this->__('Apply') ?></span></span></button>
+    </li>
+    <li>
+      <div class="message-campaings"></div>
+    </li>
+  <?php endif; ?>
+  <li>
+    <div class="instructions-content agreement-content">
+      <?php echo nl2br($this->getInstructions()); ?>
+    </div>
+  </li>
+</ul>
+
+<script type="text/javascript">
+//<![CDATA[
+  Eloom.MercadoPago.PaymentBoleto.config = {code: "<?php echo $code ?>", amount: <?php echo $this->getGrandTotal(); ?>};
+  Eloom.MercadoPago.PaymentBoleto.init();
+//]]>
+</script>

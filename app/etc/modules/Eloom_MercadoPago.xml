@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Eloom_MercadoPago>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>##eloom.versao##</version>
+      <depends>
+        <Eloom_Bootstrap />
+        <Mage_Payment />
+      </depends>
+    </Eloom_MercadoPago>
+  </modules>
+</config>

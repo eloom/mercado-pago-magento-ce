@@ -1,0 +1,16 @@
+<script type="text/javascript">
+//<![CDATA[
+  Eloom.MercadoPagoCardTypes.init({mediaUrl: "<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);?>"});
+  
+  Eloom.MercadoPago.config = {
+      installmentsUrl: "<?php echo $this->getUrl('eloommercadopago/index/installments', array('_secure' => true)); ?>", 
+      campaignsUrl: "<?php echo $this->getUrl('eloommercadopago/index/campaigns', array('_secure' => true)); ?>", 
+      logo: "<?php echo $this->getSkinUrl('eloom/mercadopago/images/logo.png'); ?>",
+      customerTaxVat: "<?php echo $this->getCustomerTaxvat();?>",
+      customerEmail: "<?php echo $this->getCustomerEmail();?>"
+  };
+  Eloom.MercadoPago.Errors.config = eval(<?php echo $this->listJsonErrors(); ?>);
+
+  Mercadopago.setPublishableKey('<?php echo $this->getPublicKey(); ?>');
+//]]>
+</script>

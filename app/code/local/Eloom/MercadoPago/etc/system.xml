@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<config>
+  <sections>
+    <payment>
+      <groups>
+        <eloom_mercadopago translate="label" module="eloom_mercadopago">
+          <label><![CDATA[MercadoPago]]></label>
+          <sort_order>1002</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>0</show_in_store>
+          <fields>
+            <allowspecific translate="label">
+              <label><![CDATA[Payment from applicable countries]]></label>
+              <frontend_type>allowspecific</frontend_type>
+              <source_model>adminhtml/system_config_source_payment_allspecificcountries
+              </source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>4</sort_order>
+            </allowspecific>
+            <specificcountry translate="label">
+              <label><![CDATA[Payment from Specific countries]]></label>
+              <frontend_type>multiselect</frontend_type>
+              <source_model>adminhtml/system_config_source_country
+              </source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>5</sort_order>
+            </specificcountry>
+            <credentials translate="label">
+              <label><![CDATA[<strong>CONVÊNIO</strong>]]></label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+              <sort_order>10</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </credentials>
+            <public_key translate="label">
+              <label><![CDATA[Public key]]></label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>11</sort_order>
+            </public_key>
+            <access_token translate="label" module="eloom_mercadopago">
+              <label><![CDATA[Access token]]></label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>12</sort_order>
+              <comment>
+                  <![CDATA[
+                    <span>Obtenha os Dados de Acesso </span>
+                    <a href="https://www.mercadopago.com/mlb/account/credentials" target="_blank">Aqui</a>
+                  ]]>
+              </comment>
+            </access_token>
+            <order_status translate="label">
+              <label><![CDATA[<strong>ORDER STATUS</strong>]]></label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+              <sort_order>20</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </order_status>
+            <new_order_status translate="label comment">
+              <label>New Order Status</label>
+              <sort_order>21</sort_order>
+              <frontend_type>select</frontend_type>
+              <validate>required-entry</validate>
+              <source_model>adminhtml/system_config_source_order_status_new</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <comment><![CDATA[When the order has the NEW and IN PROGRESS state type in Magento will put the order in this status.]]></comment>
+            </new_order_status>
+            <approved_order_status translate="label comment">
+              <label>Approved Order Status</label>
+              <sort_order>22</sort_order>
+              <frontend_type>select</frontend_type>
+              <validate>required-entry</validate>
+              <source_model>adminhtml/system_config_source_order_status_processing</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <comment><![CDATA[When the order has the APPROVED status type in Magento will put the order in this status.]]></comment>
+            </approved_order_status>
+            <campaigns translate="label">
+              <label><![CDATA[<strong>CAMPANHAS</strong>]]></label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+              <sort_order>30</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </campaigns>
+            <allow_campaigns>
+              <label><![CDATA[Allow Campaigns]]></label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>31</sort_order>
+              <comment>
+                  <![CDATA[Ao habilitar a campanha, o cálculo do desconto será aplicado automaticamente para o cliente.]]>
+              </comment>
+            </allow_campaigns>
+            <!--
+            <campaign_instructions>
+              <label><![CDATA[Instructions]]></label>
+              <frontend_type>textarea</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>32</sort_order>
+              <depends>
+                <allow_campaigns>1</allow_campaigns>
+              </depends>
+            </campaign_instructions>
+            -->
+          </fields>
+        </eloom_mercadopago>
+        
+        <eloom_mercadopago_boleto translate="label" module="eloom_mercadopago">
+          <label><![CDATA[MercadoPago - Boleto Bancário]]></label>
+          <sort_order>1003</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>0</show_in_store>
+          <fields>
+            <title translate="label">
+              <label><![CDATA[Title]]></label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>1</sort_order>
+            </title>
+            <active translate="label">
+              <label><![CDATA[Enabled]]></label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>2</sort_order>
+            </active>
+            <expiration translate="label">
+              <label><![CDATA[Validade]]></label>
+              <frontend_type>text</frontend_type>
+              <sort_order>3</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment><![CDATA[Quantidade, em dias, que o boleto será válido.]]></comment>
+            </expiration>
+            <instructions translate="label">
+              <label><![CDATA[Instructions]]></label>
+              <frontend_type>textarea</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>4</sort_order>
+            </instructions>
+            <cancel translate="label">
+              <label><![CDATA[Cancelar boletos automaticamente?]]></label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>5</sort_order>
+            </cancel>
+            <cancel_on_friday translate="label">
+              <label><![CDATA[Compras na Sexta-feira]]></label>
+              <frontend_type>text</frontend_type>
+              <validate>required-entry validate-length maximum-length-5</validate>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>6</sort_order>
+              <depends>
+                <cancel>1</cancel>
+              </depends>
+              <comment><![CDATA[Prazo, em dias corridos, que o sistema cancelará as compras realizadas na Sexta-feira.<br/>O sistema irá somar este prazo com o prazo de Validade do Boleto.]]></comment>
+            </cancel_on_friday>
+            <cancel_on_saturday translate="label">
+              <label><![CDATA[Compras no Sábado]]></label>
+              <frontend_type>text</frontend_type>
+              <validate>required-entry validate-length maximum-length-5</validate>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>7</sort_order>
+              <depends>
+                <cancel>1</cancel>
+              </depends>
+              <comment><![CDATA[Prazo, em dias corridos, que o sistema cancelará as compras realizadas no Sábado.<br/>O sistema irá somar este prazo com o prazo de Validade do Boleto.]]></comment>
+            </cancel_on_saturday>
+            <cancel_on_sunday translate="label">
+              <label><![CDATA[Compras entre Domingo e Quinta-feira]]></label>
+              <frontend_type>text</frontend_type>
+              <validate>required-entry validate-length maximum-length-5</validate>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>8</sort_order>
+              <depends>
+                <cancel>1</cancel>
+              </depends>
+              <comment><![CDATA[Prazo, em dias corridos, que o sistema cancelará as compras realizadas entre Domingo e Quinta-feira.<br/>O sistema irá somar este prazo com o prazo de Validade do Boleto.]]></comment>
+            </cancel_on_sunday>
+            <sort_order translate="label">
+              <label>Sort Order</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>99</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+            </sort_order>
+          </fields>
+        </eloom_mercadopago_boleto>
+        
+        <eloom_mercadopago_cc translate="label" module="eloom_mercadopago">
+          <label><![CDATA[MercadoPago - Cartão de Crédito]]></label>
+          <sort_order>1004</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>0</show_in_store>
+          <fields>
+            <title translate="label">
+              <label><![CDATA[Title]]></label>
+              <frontend_type>text</frontend_type>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>1</sort_order>
+            </title>
+            <active translate="label">
+              <label><![CDATA[Enabled]]></label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <sort_order>2</sort_order>
+            </active>
+            <discount translate="label">
+              <label><![CDATA[Desconto à Vista]]></label>
+              <frontend_type>text</frontend_type>
+              <validate>required-entry validate-length maximum-length-5</validate>
+              <sort_order>4</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment><![CDATA[Aplicado somente se a Campanha do MercadPago estiver desabilitada.<br/>Desconto em percentual aplicado apenas na primeira parcela. Caso não seja informado, nenhum desconto será aplicado. Valor máximo: 99,99 <br/> Ex: 4,75.]]>
+              </comment>
+            </discount>
+            <installments translate="label">
+              <label><![CDATA[<strong>PARCELAMENTO</strong>]]></label>
+              <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+              <sort_order>10</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </installments>
+            <min_installment translate="label">
+              <label><![CDATA[Parcela Mínima]]></label>
+              <frontend_type>text</frontend_type>
+              <validate>validate-length maximum-length-5</validate>
+              <sort_order>11</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <comment><![CDATA[Valor da Parcela Mínima.<br/> Ex: 30,00.]]></comment>
+            </min_installment>
+            <sort_order translate="label">
+              <label>Sort Order</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>99</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+            </sort_order>
+          </fields>
+        </eloom_mercadopago_cc>
+      </groups>
+    </payment>
+  </sections>
+</config>

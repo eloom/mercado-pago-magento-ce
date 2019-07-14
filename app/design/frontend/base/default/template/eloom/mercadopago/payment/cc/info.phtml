@@ -1,0 +1,17 @@
+<table class="form-list" cellspacing="0">
+  <tbody>
+    <tr>
+      <td class="label"><?php echo $this->escapeHtml($this->getMethod()->getTitle()) ?></td>
+      <td class="value"><img src="<?php echo $this->getSkinUrl('eloom/mercadopago/images/logo.png'); ?>"/></td>
+    </tr>
+    <?php if ($_specificInfo = $this->getSpecificInformation()): ?>
+      <?php foreach ($_specificInfo as $_label => $_value): ?>
+        <tr>
+          <td class="label"><?php echo $this->escapeHtml($_label) ?></td>
+          <td class="value"><?php echo nl2br(implode($this->getValueAsArray($_value, true), "\n")) ?></td>
+        </tr>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </tbody>
+</table>
+<?php echo $this->getChildHtml(); ?>

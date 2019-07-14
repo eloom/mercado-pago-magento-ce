@@ -1,0 +1,93 @@
+# -- A
+"Apply","Aplicar"
+"Account ID","Account ID"
+"API Key","API Key"
+"Allow Campaigns","Habilitar Campanha"
+"Approved Order Status","Status de Pedidos Aprovados"
+
+# -- B
+
+# -- C
+"Credit Card Type", "Bandeira"
+"Campaign Code","Código da Campanha"
+"CC Number", "Número do Cartão"
+"CC Owner","Titular do Cartão"
+"CC Expiry","Validade"
+"CC CVC", "Código Segurança"
+"CC Status","Status"
+
+# -- D
+"Discount","Pagamento à vista"
+"Discount Code MP","Cupom MercadoPago"
+
+# -- E
+"Error","Erro"
+"Environment","Processar pagamento em"
+"Expiration","Expiração"
+
+# -- I
+"Informe seu email e CPF para visualizar o desconto do MercadoPago.","Informe seu email e CPF para visualizar o desconto do MercadoPago."
+
+# -- L
+"Last Credit Card Number", "Últimos digitos cartão"
+
+# -- I
+"Instructions", "Instruções"
+"Installment no Interest", "Parcelas sem Juros"
+"Installments", "Forma de Pagamento"
+"Interest","Juros MercadoPago"
+
+# -- N
+"New order status","Novo Status do Pedido"
+
+# -- M
+"MercadoPago Campaign Discount", "Desconto MercadoPago"
+"(MM/AAAA)","(Mês/Ano)"
+
+# -- O
+"Ops! Parece que você já usou esse cupom para o email %s.","Ops! Parece que você já usou esse cupom para o email %s."
+"Ops! A campanha com código %s não foi encontrada.","Ops! A campanha com código %s não foi encontrada."
+"Ops! Houve um erro ao recurepar as informações da campanha %s.","Ops! Houve um erro ao recurepar as informações da campanha %s."
+# -- P
+"Payment from applicable countries","Pagamento para Países Selecionados"
+"Payment from Specific countries","Pagamento para Países Específicos"
+"Public Key","Chave Pública"
+"Pay With", "Pago com"
+"MercadoPago Order ID", "Pedido no MercadoPago"
+"MercadoPago Transaction ID", "O identificador da sua transação no MercadoPago é: "
+"MercadoPago Bar Code", "Código de Barras"
+"Production","Produção"
+"Print Order", "Imprimir Pedido"
+"Print Boleto", "Imprimir Boleto"
+"Print Boleto Message", "Para realizar o pagamento, imprima o Boleto Bancário."
+
+# -- S
+"Holder CPF", "CPF do Titular"
+"Holder Phone", "Telefone do Titular"
+"Holder Birth Date", "Nascimento do Titular"
+"Holder Another", "Este cartão pertence a outra pessoa."
+"Sort Order", "Ordem"
+
+# -- T
+"Transaction.Status.pending", "Pedido aguardando pagamento."
+"Transaction.Status.approved", "O pagamento foi aprovado."
+"Transaction.Status.authorized", "O pagamento foi autrizado e está pendente de captura."
+"Transaction.Status.in_process", "O pagamento está sendo revisado pelo MercadoPago."
+"Transaction.Status.in_mediation", "O pagamento está em Processo de Disputa no MercadoPago."
+"Transaction.Status.rejected", "O pagamento foi rejeitado."
+"Transaction.Status.cancelled", "O pagamento foi cancelado."
+"Transaction.Status.refunded","O pagamento foi reembolsado ao cliente."
+"Transaction.Status.charged_back","O pagamento foi estornado no cartão de crédito do cliente."
+"Test","Teste"
+
+# -- V
+"Você ganhou %s de desconto do MercadoPago.","Você ganhou %s de desconto do MercadoPago."
+
+# -- Y
+"Your payment was processed by MercadoPago", "Seu pagamento foi processado por MercadoPago."
+"Your payment status is", "O status do pagamento é: "
+"Your payment must be made before %s","O pagamento deverá ser realizado antes de %s."
+
+# -- W
+"When the order has the NEW and IN PROGRESS state type in Magento will put the order in this status.", "Quando o pedido tem o tipo de status 'Pendente' ou 'Em análise' no MercadoPago, a loja definirá este status para o pedido."
+"When the order has the APPROVED status type in Magento will put the order in this status.","Quando o pedido tem o tipo de status 'Pago' no MercadoPago, a loja definirá este status para o pedido."

@@ -1,0 +1,25 @@
+<?php
+$payment = $this->getPayment();
+$helper = Mage::helper('eloom_mercadopago');
+?>
+
+<div class="success-detail">
+  <img src="<?php echo $this->getSkinUrl('eloom/mercadopago/images/logo.png'); ?>"/>
+  <p><?php echo $helper->__('Your payment was processed by MercadoPago'); ?></p>
+
+  <p>
+    <?php echo $helper->__('MercadoPago Transaction ID ') . $payment->getLastTransId(); ?>
+  </p>
+
+  <p>
+    <?php echo $helper->__('Your payment status is ') . $helper->__('Transaction.Status.' . $payment->getCcStatus()); ?>
+  </p>
+
+  <?php if ($this->isBoleto()): ?>
+    <p class="print"><?php echo Mage::helper('checkout')->__('Print Boleto Message'); ?></p>
+    <a href="<?php echo $this->getBoletoLink(); ?>" target="blank" class="button" title="<?php echo Mage::helper('checkout')->__('Print Boleto'); ?>">
+      <i class="fa fa-barcode" aria-hidden="true"></i>
+      <?php echo $helper->__('Print Boleto'); ?>
+    </a>
+  <?php endif; ?>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+  <idecheckoutvm_index_index translate="label">
+    <reference name="head">
+      <block type="core/text" name="mp.js.api">
+        <action method="setText">
+          <text><![CDATA[<script type="text/javascript" src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>]]></text>
+        </action>
+      </block>
+      <action method="addJs">
+        <file>eloom/mercadopago/app.js?v=##eloom.versao##</file>
+      </action>
+    </reference>
+    <reference name="after_body_start">
+      <block type="eloom_mercadopago/payment_standard" name="eloom.mp.standard" />
+    </reference>
+  </idecheckoutvm_index_index>
+  
+  <checkout_onepage_success>
+    <reference name="checkout.success">
+      <block type="eloom_mercadopago/checkout_onepage_details" name="success.details" />
+    </reference>
+  </checkout_onepage_success>
+</layout>

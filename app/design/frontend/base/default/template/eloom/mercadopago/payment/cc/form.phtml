@@ -1,0 +1,73 @@
+<?php $code = $this->getMethodCode(); ?>
+<ul id="payment_form_<?php echo $code ?>" class="form-list" style="display: none;">
+    <?php if ($this->isAllowCampaigns()): ?>
+      <li class="discount-code">
+          <input type="text" name="payment[mp_cc_campaigns_code]" id="<?php echo $code ?>-campaigns-code" class="input-text" placeholder="<?php echo $this->__('Discount Code MP') ?>" autocomplete="off" value="<?php echo $this->getInfoData('mp_cc_campaigns_code'); ?>"/>
+          <button type="button" class="button" onclick="Eloom.MercadoPago.CampaignsCode.apply(this);"><span><span><?php echo $this->__('Apply') ?></span></span></button>
+      </li>
+      <li>
+          <div class="message-campaings"></div>
+      </li>
+    <?php endif; ?>
+    <li class="mp-cc-number">
+        <label><?php echo $this->__('CC Number') ?></label>
+        <input type="tel" id="<?php echo $code ?>-mp-cc-number" class="input-text required-entry validate-cc-number-eloom mp-cc-number" autocomplete="off"/>
+    </li>
+    <li class="mp-cc-owner">
+        <label><?php echo $this->__('CC Owner') ?></label>
+        <input type="text" name="payment[mp_cc_owner]" id="<?php echo $code ?>-mp-cc-owner" class="input-text required-entry validate-cc-owner-eloom" style="text-transform: uppercase;" autocomplete="off"/>
+    </li>
+    <li class="mp-cc-expiry">
+        <label><?php echo $this->__('CC Expiry') ?><span><?php echo $this->__('(MM/AAAA)') ?></span></label>
+        <input type="tel" id="<?php echo $code ?>-mp-cc-expiry" class="input-text required-entry" placeholder="MM/AAAA" autocomplete="off"/>
+    </li>
+    <li class="mp-cc-cvc">
+        <label><?php echo $this->__('CC CVC') ?></label>
+        <input type="tel" id="<?php echo $code ?>-mp-cc-cvc" class="input-text required-entry validate-cc-cvn" autocomplete="off"/>
+    </li>
+    <li class="mp-cc-token">
+        <input type="hidden" name="payment[mp_cc_token]" id="<?php echo $code ?>-mp-cc-token" />
+        <input type="hidden" name="payment[mp_cc_last_four_digits]" id="<?php echo $code ?>-mp-cc-last-four-digits" />
+    </li>
+    <li>
+        <div class="message-token"></div>
+    </li>
+    <li>
+        <label><?php echo $this->__('Installments') ?></label>
+        <select name="payment[mp_cc_installments]" id="<?php echo $code ?>-installments" class="input-text required-entry">
+            <option value=""><?php echo $this->__('Informe o número do cartão') ?></option>
+        </select>
+    </li>
+    <li>
+        <input type="checkbox" name="payment[mp_cc_holder_another]" id="<?php echo $code ?>-mp-cc-holder-another" value="1" />
+        <label for="<?php echo $code ?>-mp-cc-holder-another"><?php echo $this->__('Holder Another') ?></label>
+    </li>
+    <li class="mp-cc-holder mp-cc-holder-cpf">
+        <label><?php echo $this->__('Holder CPF') ?></label>
+        <input type="tel" name="payment[mp_cc_holder_cpf]" id="<?php echo $code ?>-mp-cc-holder-cpf" class="input-text idecheckoutvm-cpf" autocomplete="off" />
+    </li>
+    <li class="mp-cc-holder mp-cc-holder-phone">
+        <label><?php echo $this->__('Holder Phone') ?></label>
+        <input type="tel" name="payment[mp_cc_holder_phone]" id="<?php echo $code ?>-mp-cc-holder-phone" class="input-text telephone" autocomplete="off"/>
+    </li>
+    <li>
+        <input type="hidden" name="payment[mp_cc_type]" id="<?php echo $code ?>-mp-cc-type" />
+    </li>
+</ul>
+<script type="text/javascript">
+//<![CDATA[
+    Eloom.MercadoPago.PaymentCc.config = {code: "<?php echo $code ?>",
+    amount: <?php echo $this->getGrandTotal(); ?>,
+    percentualDiscount: <?php echo $this->getPercentualDiscount(); ?>,
+    minInstallment: <?php echo $this->getMinInstallment(); ?>
+    };
+    Eloom.MercadoPago.PaymentCc.init();
+
+    $('<?php echo $code ?>-mp-cc-holder-cpf').observe('keyup', function () {
+        ideMaskInst.inject(this, ideMaskInst.cpf);
+    }).triggerEvent('keyup');
+    $('<?php echo $code ?>-mp-cc-holder-phone').observe('keyup', function () {
+        ideMaskInst.inject(this, ideMaskInst.phone);
+    }).triggerEvent('keyup');
+//]]>
+</script>
