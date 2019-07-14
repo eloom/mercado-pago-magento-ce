@@ -38,9 +38,9 @@ Integração com a API Transparente de Pagamentos do Mercado Pago.
 ## Dependências
 
 
-O módulo de pagamento Yapay Intermediador para Magento precisa do módulo [Bootstrap para Magento CE](https://github.com/eloom/bootstrap-magento-ce)
+O módulo de pagamento Mercado Pago API Transparente para Magento precisa do módulo [Bootstrap para Magento CE](https://github.com/eloom/bootstrap-magento-ce)
 
-O módulo de pagamento Yapay Intermediador para Magento funciona apenas no [Checkout para Magento CE](https://github.com/eloom/checkout-magento-ce)
+O módulo de pagamento Mercado Pago API Transparente para Magento funciona apenas no [Checkout para Magento CE](https://github.com/eloom/checkout-magento-ce)
 
 
 ## Compatibilidade
