@@ -1,6 +1,6 @@
 # Mercado Pago Intermediador de Pagamentos para Magento
 
-Integração com a API Transparente de Pagamento do Mercado Pago.
+Integração com a API Transparente de Pagamentos do Mercado Pago.
 
 ## Recursos
 
