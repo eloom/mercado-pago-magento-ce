@@ -49,8 +49,8 @@ class Eloom_MercadoPago_RestClient {
 
     curl_setopt($connect, CURLOPT_USERAGENT, "MercadoPago PHP SDK v" . Eloom_MercadoPago_Api::version);
     curl_setopt($connect, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($connect, CURLOPT_SSL_VERIFYPEER, true);
-    curl_setopt($connect, CURLOPT_CAINFO, dirname(__FILE__) . "/cacert.pem");
+    //curl_setopt($connect, CURLOPT_SSL_VERIFYPEER, true);
+    //curl_setopt($connect, CURLOPT_CAINFO, dirname(__FILE__) . "/cacert.pem");
     curl_setopt($connect, CURLOPT_CUSTOMREQUEST, $request["method"]);
     curl_setopt($connect, CURLOPT_HTTPHEADER, $headers);
 
